@@ -18,8 +18,6 @@ app = FastAPI(title="Mergington High School API",
 current_dir = Path(__file__).parent
 app.mount("/static", StaticFiles(directory=os.path.join(Path(__file__).parent,
           "static")), name="static")
-
-# In-memory activity database
 activities = {
     "Chess Club": {
         "description": "Learn strategies and compete in chess tournaments",
@@ -38,8 +36,46 @@ activities = {
         "schedule": "Mondays, Wednesdays, Fridays, 2:00 PM - 3:00 PM",
         "max_participants": 30,
         "participants": ["john@mergington.edu", "olivia@mergington.edu"]
+    },
+    "Basketball Team": {
+        "description": "Competitive basketball training and games",
+        "schedule": "Mondays and Wednesdays, 4:00 PM - 5:30 PM",
+        "max_participants": 15,
+        "participants": []
+    },
+    "Tennis Club": {
+        "description": "Tennis skills development and friendly matches",
+        "schedule": "Tuesdays and Thursdays, 4:00 PM - 5:00 PM",
+        "max_participants": 10,
+        "participants": []
+    },
+    "Art Studio": {
+        "description": "Painting, drawing, and mixed media art techniques",
+        "schedule": "Wednesdays, 3:30 PM - 5:00 PM",
+        "max_participants": 18,
+        "participants": []
+    },
+    "Drama Club": {
+        "description": "Theater production and performance experience",
+        "schedule": "Mondays and Thursdays, 4:00 PM - 5:30 PM",
+        "max_participants": 25,
+        "participants": []
+    },
+    "Debate Team": {
+        "description": "Competitive debate and public speaking skills",
+        "schedule": "Tuesdays, 3:30 PM - 4:30 PM",
+        "max_participants": 14,
+        "participants": []
+    },
+    "Science Club": {
+        "description": "Hands-on science experiments and STEM projects",
+        "schedule": "Fridays, 4:00 PM - 5:00 PM",
+        "max_participants": 20,
+        "participants": []
     }
 }
+# In-memory activity database
+
 
 
 @app.get("/")
